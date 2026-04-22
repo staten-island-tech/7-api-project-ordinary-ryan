@@ -1,6 +1,6 @@
 import requests
 
-def getPoke(poke):
+""" def getPoke(poke):
     response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke.lower()}")
     if response.status_code != 200:
         print("Error fetching data!")
@@ -15,22 +15,34 @@ def getPoke(poke):
     }
 
 pokemon = getPoke("Bulbasaur")
-print(pokemon)
+print(pokemon) """
 
 
 
 
-def food(foods):
-    response = requests.get(f"https://api.edamam.com/doc/open-api/nutrition-analysis-v1.yaml{foods.lower()}")
+def dog(dogs):
+    response = requests.get(f"https://dogapi.dog/api/v2/breeds{dogs.lower()}")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
+    
     data = response.json()
     return {
-        "name": data["Name"],
+        "name": data["name"],
+        "type": data["breed"],
         "weight": data["Unit"],
-        "types": [t["Unit"]["Name"] for t in data["types"]]
+        "description" : data["description"]
     }
+doggy = dog("Afghan Hound")
+print(doggy)
 
-foody = food("edamame")
-print(foody)
+
+doggy = {
+    "name": "Afghan Hound",
+    "type": "breed",
+    "description" : "The Afghan Hound is a large and elegant breed of dog that was originally bred in Afghanistan for hunting small game. They are intelligent, independent, and athletic, and make excellent companion dogs."
+}
+
+doggy = dog("Afghan Hound")
+for key, value in doggy:
+    print(key, "→", value)
