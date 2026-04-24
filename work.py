@@ -1,6 +1,6 @@
 import requests
 
-def getPoke(poke):
+""" def getPoke(poke):
     response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke.lower()}")
     if response.status_code != 200:
         print("Error fetching data!")
@@ -15,27 +15,27 @@ def getPoke(poke):
     }
 
 pokemon = getPoke("Bulbasaur")
-print(pokemon) 
+print(pokemon)  """
 
 
-
-
-""" def dog(dogs):
-    response = requests.get(f"https://dogapi.dog/api/v2/breeds{dogs.lower()}")
+def dog(dogs):
+    url = "https://dogapi.dog/api/v2/breeds"
+    response = requests.get(url)
     if response.status_code != 200:
         print("Error fetching data!")
         return None
     
     data = response.json()
+    print(data)
     return {
         'attributes': {
-            "name": data["name"],
-            "description" : data["description"]
+            "name": data['name'],
+            "description" : data['description']
         }
     }
 doggy = dog("Afghan Hound")
-print(doggy) """
-
+print(doggy) 
+dog(doggy)
 
 """ doggy = {
     "name": "Afghan Hound",
@@ -46,4 +46,4 @@ print(doggy) """
 doggy = dog("Afghan Hound")
 for key, value in doggy:
     print(key, "→", value)
- """
+ """ 
