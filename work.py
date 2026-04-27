@@ -28,11 +28,10 @@ def dog(dogs):
     data = response.json()
     print(data)
     return {
-        'attributes': {
-            "name": data['name'],
-            "description" : data['description']
+        "name": data['name'],
+        "description" : data['description']
         }
-    }
+
 doggy = dog("Afghan Hound")
 print(doggy) 
 dog(doggy)
