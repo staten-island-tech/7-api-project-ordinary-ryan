@@ -12,10 +12,9 @@ prompt.pack(pady=10) # pack() places the widget; pady adds space
  """
 
 
-""" 
-import tkinter as tk
+""" import tkinter as tk
 def say_hello():
-    print("Hello there!")
+    print("im gonna eat you")
 window = tk.Tk()
 window.title("Button Example")
 # Create the button
@@ -31,8 +30,7 @@ padx=10, pady=5 # padding around the text
 
 )
 my_button.pack(pady=20) # place it on the window
-window.mainloop() """
-
+window.mainloop()  """
 import tkinter as tk
 window = tk.Tk()
 window.title("Local Image Example")
@@ -44,3 +42,4 @@ label.pack(padx=20, pady=20)
 # Keep a reference so the image doesn't vanish
 label.image = photo
 window.mainloop()
+

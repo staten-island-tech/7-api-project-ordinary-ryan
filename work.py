@@ -34,7 +34,7 @@ def dog(dogs):
 
 doggy = dog("Afghan Hound")
 print(doggy) 
-dog(doggy)
+
 
 """ doggy = {
     "name": "Afghan Hound",
