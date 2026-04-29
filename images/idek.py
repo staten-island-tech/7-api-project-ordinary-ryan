@@ -13,14 +13,20 @@ prompt.pack(pady=10) # pack() places the widget; pady adds space
 
 
 """ import tkinter as tk
-def say_hello():
-    print("im gonna eat you")
+import requests
+
+def dog(dogs):
+    url = "https://dogapi.dog/api/v2/breeds"
+    response = requests.get(url)
+
+    Image = Image.open("image.png")
+    image = photo
 window = tk.Tk()
 window.title("Button Example")
 # Create the button
 my_button = tk.Button(
 window, # parent container
-text="Say Hello", # label text
+text="Click for dog", # label text
 command=say_hello, # function to call when clicked
 font=("Arial", 16), # nice big font
 bg="lightblue", # background color
@@ -30,16 +36,70 @@ padx=10, pady=5 # padding around the text
 
 )
 my_button.pack(pady=20) # place it on the window
-window.mainloop()  """
+window.mainloop() 
+ """
+""" 
 import tkinter as tk
 window = tk.Tk()
-window.title("Local Image Example")
-# Load an image file in the same folder as this script
-photo = tk.PhotoImage(file="image.png")
-# Create a label that shows the image
-label = tk.Label(window, image=photo)
-label.pack(padx=20, pady=20)
-# Keep a reference so the image doesn't vanish
-label.image = photo
+window.title("Label Example")
+# Create a label
+label = tk.Label(
+window,
+text="Hello, Tkinter!",
+
+font=("Comic Sans MS", 20, "bold"),
+fg="white",
+bg="purple",
+padx=20,
+pady=10,
+relief="ridge"
+)
+
+label.pack(pady=20)
+window.mainloop() """
+""" 
+import tkinter as tk
+def change_label():
+    label.config(text="You clicked me!")
+
+window = tk.Tk()
+label = tk.Label(window, text="Click the button!", font=("Arial", 16))
+label.pack(pady=10)
+button = tk.Button(window, text="Click Me", command=change_label)
+button.pack(pady=10)
 window.mainloop()
 
+import tkinter as tk
+
+window = tk.Tk()
+window.title("Image Example")
+window.geometry("400x400")
+ """
+from PIL import Image, ImageTk
+import tkinter as tk
+import requests
+
+
+def dog(dogs):
+    url = "https://random.dog"
+    response = requests.get(url)
+    with open('randomdog.jpeg' ,'wb') as f:
+        f.write(response.content)
+        
+    image = Image.open("my_photo.jpg") # open image file
+    photo = ImageTk.PhotoImage(image)
+
+    label = tk.Label(window, image=photo)
+    label.pack(padx=20, pady=20)
+    label.image = photo
+
+window = tk.Tk()
+window.title("dog")
+# Load image
+image = Image.open("puppy.jpg") # image must be in same folder or full path
+image = image.resize((300, 200)) # optional: resize to fit
+window
+photo = ImageTk.PhotoImage(image)
+# Display
+
+window.mainloop()
