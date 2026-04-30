@@ -81,12 +81,12 @@ import requests
 
 
 def dog(dogs):
-    url = "https://random.dog"
+    url = "https://random.dog/53d44c97-25bc-4503-9bed-5e9d6bb0e53a.mp4"
     response = requests.get(url)
-    with open('randomdog.jpeg' ,'wb') as f:
+    with open('random.dog.jpg' ,'wb') as f:
         f.write(response.content)
         
-    image = Image.open("my_photo.jpg") # open image file
+    image = Image.open("random.dog.jpg") # open image file
     photo = ImageTk.PhotoImage(image)
 
     label = tk.Label(window, image=photo)
@@ -96,7 +96,7 @@ def dog(dogs):
 window = tk.Tk()
 window.title("dog")
 # Load image
-image = Image.open("puppy.jpg") # image must be in same folder or full path
+image = Image.open("random.dog.jpg") # image must be in same folder or full path
 image = image.resize((300, 200)) # optional: resize to fit
 window
 photo = ImageTk.PhotoImage(image)
