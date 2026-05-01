@@ -26,10 +26,9 @@ def dog(dogs):
         return None
     
     data = response.json()
-
     for breed in data['data']:
         attributes = breed['attributes']
-        if attributes['name'].lower() == dogs.lower():
+        if attributes['name'] == dogs:
             return {
                 "name": attributes['name'],
                 "description" : attributes['description']

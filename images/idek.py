@@ -81,25 +81,28 @@ import requests
 
 
 def dog(dogs):
-    url = "https://random.dog/53d44c97-25bc-4503-9bed-5e9d6bb0e53a.mp4"
+    url = "https://random.dog/woof.json"
     response = requests.get(url)
-    with open('random.dog.jpg' ,'wb') as f:
+    with open("dog.jpeg",'wb') as f:
         f.write(response.content)
         
-    image = Image.open("random.dog.jpg") # open image file
+    image = Image.open("dog.jpeg") # open image file
     photo = ImageTk.PhotoImage(image)
-
+    
     label = tk.Label(window, image=photo)
     label.pack(padx=20, pady=20)
     label.image = photo
 
+    label.config(text="You clicked me!")
+
+def change_label():
+    label.config(text="Click again")
 window = tk.Tk()
 window.title("dog")
-# Load image
-image = Image.open("random.dog.jpg") # image must be in same folder or full path
-image = image.resize((300, 200)) # optional: resize to fit
-window
-photo = ImageTk.PhotoImage(image)
-# Display
+label = tk.Label(window, text="Click the button!", font=("Arial", 16))
+label.pack(pady=200, padx =200)
+button = tk.Button(window, text="Click here for a dog", command=change_label)
+button.pack(pady=100, padx=100)
+
 
 window.mainloop()
