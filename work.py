@@ -26,11 +26,16 @@ def dog(dogs):
         return None
     
     data = response.json()
-    print(data)
-    return {
-        "name": data['name'],
-        "description" : data['description']
+
+    for breed in data['data']:
+        attributes = breed['attributes']
+        if attributes['name'].lower() == dogs.lower():
+            return {
+                "name": attributes['name'],
+                "description" : attributes['description']
         }
+
+    return None
 
 doggy = dog("Afghan Hound")
 print(doggy) 
