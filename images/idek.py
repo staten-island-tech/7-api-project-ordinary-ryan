@@ -93,9 +93,7 @@ def dog(dogs):
     label.pack(padx=20, pady=20)
     label.image = photo
 
-    label.config(text="You clicked me!")
-
-def change_label():
+""" def change_label():
     label.config(text="Click again")
 window = tk.Tk()
 window.title("dog")
@@ -103,6 +101,8 @@ label = tk.Label(window, text="Click the button!", font=("Arial", 16))
 label.pack(pady=200, padx =200)
 button = tk.Button(window, text="Click here for a dog", command=change_label)
 button.pack(pady=100, padx=100)
-
-
+ """
+window = tk.Tk()
+window.title("Image Example")
+window.geometry("400x400")
 window.mainloop()
