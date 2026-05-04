@@ -34,8 +34,8 @@ def dog(dogs):
                 "description" : attributes['description']
         }
 
-    doggy = dog('Afghan Hound')
-    print(doggy) 
+doggy = dog('Afghan Hound')
+print(doggy) 
 
        
 
