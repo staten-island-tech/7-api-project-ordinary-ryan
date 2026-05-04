@@ -19,7 +19,6 @@ print(pokemon)  """
 
 
 def dog(dogs):
-    question = input("what dog are you looking for?")
     url = "https://dogapi.dog/api/v2/breeds"
     response = requests.get(url)
     if response.status_code != 200:
@@ -35,9 +34,9 @@ def dog(dogs):
                 "description" : attributes['description']
         }
 
-    dogs = question 
-    print(dogs) 
-    dog(dogs)
+    doggy = dog('Afghan Hound')
+    print(doggy) 
+
        
 
 
